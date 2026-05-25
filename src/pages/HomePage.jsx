@@ -78,7 +78,7 @@ function HomePage({ onNavigate, onAddToCart, onViewDetail, cartIds }) {
       </section>
       
       {/* Manufacturer Logos */}
-      <section style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "48px 0" }}>
+      <section style={{ background: "var(--surface)", borderTop: "2px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "48px 0" }}>
         <div className="container">
           <div className="section-header" style={{ marginBottom: 36, justifyContent: "center", textAlign: "center"}}>
               <div className="section-title" style={{ fontSize: 35, fontWeight: 600 }}>Manufacturers</div>

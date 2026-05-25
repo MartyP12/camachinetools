@@ -13,9 +13,11 @@
   }
   .hero-grid-bg {
     position: absolute; inset: 0;
+    /*
     background-image:
       linear-gradient(var(--border) 1px, transparent 1px),
       linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      */
     background-size: 40px 40px;
     opacity: 0.35;
   }
@@ -40,7 +42,7 @@
   }
   .hero-title em { color: var(--accent); font-style: normal; }
   .hero-subtitle {
-    font-size: 15px; color: var(--muted); max-width: 480px; line-height: 1.65;
+    font-size: 15px; color: var(--dim); max-width: 480px; line-height: 1.65;
     margin-bottom: 36px;
   }
   .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
