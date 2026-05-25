@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #e1e1e1;
+    --surface:  #e7eaf3;
+    --card:     #191d24;
+    --border:   #252b35;
+    --accent:   #e87c0d;
+    --accent2:  #f5b942;
+    --text:     #e9e9e9;
+    --title:    #000000;
+    --muted:    #7a8494;
+    --dim:      #3d4455;
+    --success:  #28c76f;
+    --font-head: 'Barlow Condensed', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+    --r: 4px;
+    --transition: 0.18s ease;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.55; }
+  img { display: block; max-width: 100%; }
+  button { cursor: pointer; font-family: var(--font-body); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--dim); }
+
+  /* ── Layout ── */
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; margin-bottom: 48px; }

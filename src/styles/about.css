@@ -1,0 +1,20 @@
+  /* ── About ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text h2 { color: var(--title); font-family: var(--font-head); font-size: 36px; font-weight: 800; text-transform: uppercase; margin-bottom: 16px; }
+  .about-text p { font-size: 14px; color: var(--dim); line-height: 1.7; margin-bottom: 16px; }
+  .brands-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .brand-chip {
+    border: 1px solid var(--border); border-radius: var(--r);
+    padding: 8px 16px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+    background: var(--card);
+  }
+  .about-info { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 28px; }
+  .about-info-row {
+    display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .about-info-row:last-child { border-bottom: none; }
+  .about-info-icon { color: var(--accent); font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .about-info-label { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 3px; }
+  .about-info-value { font-size: 14px; color: var(--text); line-height: 1.5; }

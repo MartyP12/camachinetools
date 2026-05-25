@@ -1,0 +1,65 @@
+/* ── Navbar ── */
+    .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,13,15,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    height: 60px;
+    display: flex; align-items: center;
+    }
+    .navbar-inner {
+    display: flex; align-items: center; gap: 0; width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px;
+    }
+    .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-head); font-size: 20px; font-weight: 800;
+    letter-spacing: 0.03em; color: var(--text);
+    text-transform: uppercase; white-space: nowrap;
+    cursor: pointer; border: none; background: none; padding: 0;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-logo-mark {
+    width: 32px; height: 32px; background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; color: #000; border-radius: 2px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2px; margin: 0 auto; }
+    .nav-link {
+    background: none; border: none; color: var(--muted);
+    font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 8px 14px; border-radius: var(--r);
+    transition: color var(--transition), background var(--transition);
+    }
+    .nav-link:hover, .nav-link.active {
+    color: var(--text); background: rgba(255,255,255,0.05);
+    }
+    .nav-link.active { color: var(--accent); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-quote-btn {
+    background: var(--accent); color: #000;
+    border: none; border-radius: var(--r);
+    font-family: var(--font-head); font-size: 14px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 7px 16px;
+    transition: background var(--transition), transform var(--transition);
+    }
+    .nav-quote-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+
+    .CM-logo img {
+    margin-top: 10px;
+    width: 100px; height: 100px;
+    }
+
+    .cart-btn {
+    background: var(--card); border: 1px solid var(--border);
+    color: var(--text); border-radius: var(--r);
+    font-size: 13px; padding: 7px 13px;
+    display: flex; align-items: center; gap: 6px;
+    transition: border-color var(--transition);
+    }
+    .cart-btn:hover { border-color: var(--accent); }
+    .cart-badge {
+    background: var(--accent); color: #000;
+    border-radius: 10px; font-size: 10px; font-weight: 700;
+    padding: 1px 6px; font-family: var(--font-mono);
+    }
