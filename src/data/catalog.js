@@ -1,3 +1,5 @@
+import { getProductImages } from "./productImages";
+
 export const CATEGORIES = [
   { id: "boring-mills",     label: "Horizontal Boring Mills", icon: "⊕", sub: ["Floor Type HBMs", "Table Type HBMs"] },
   { id: "heavy-lathes",     label: "Heavy Duty Lathes",       icon: "◎", sub: ["CNC Horizontal Lathes", "Manual Universal Lathes"] },
@@ -17,6 +19,7 @@ export const PRODUCTS = [
     price: 4850,
     specs: { "Capacity Round": "130 mm", "Capacity Square": "130×130 mm", "Blade Speed": "20–120 m/min", "Motor": "0.75 kW", "Weight": "195 kg" },
     tags: ["Manual", "Band Saw", "PILOUS"],
+    images: getProductImages(["manual-band-saws.png"]),
     featured: true,
   },
   {
@@ -26,6 +29,7 @@ export const PRODUCTS = [
     price: 7200,
     specs: { "Capacity Round": "260 mm", "Capacity Square": "260×260 mm", "Blade Speed": "20–120 m/min", "Motor": "1.5 kW", "Weight": "420 kg" },
     tags: ["Gravity", "Band Saw", "PILOUS"],
+    images: getProductImages(["arg-260.png"]),
     featured: true,
   },
   {
@@ -41,6 +45,7 @@ export const PRODUCTS = [
     id: 4, sku: "RET-10P", category: "boring-mills", condition: "new",
     name: "RET-10P Floor Type HBM",
     short: "RETOS 4\" floor-type horizontal boring mill. Travelling column design with quill and ram.",
+    images: getProductImages(["floor-type-hbm.png"]),
     price: null,
     specs: { "Spindle Diameter": "100 mm (4\")", "Spindle Speed": "6–3500 rpm", "Table Size": "1250×1400 mm", "Travels (X/Y/Z)": "2000/1500/1000 mm", "Ram Travel": "710 mm" },
     tags: ["New", "HBM", "Floor Type", "RETOS"],
@@ -50,6 +55,7 @@ export const PRODUCTS = [
     id: 5, sku: "WH-10-CNC", category: "boring-mills", condition: "new",
     name: "WH-10 CNC Table Type HBM",
     short: "TOS Olomouc table-type horizontal boring mill with CNC control. 100mm spindle.",
+    images: getProductImages(["table-type-hbm-685424.png"]),
     price: null,
     specs: { "Spindle Diameter": "100 mm", "Spindle Speed": "4–2000 rpm", "Table Travel": "1600×1250 mm", "Control": "Siemens 840D sl" },
     tags: ["New", "HBM", "Table Type", "TOS Olomouc"],
@@ -59,6 +65,7 @@ export const PRODUCTS = [
     id: 6, sku: "HLC-CNC", category: "heavy-lathes", condition: "new",
     name: "HLC CNC Horizontal Lathe",
     short: "RETOS heavy-duty CNC horizontal lathe. Swing 800–2500mm, turning length up to 12000mm.",
+    images: getProductImages(["hlc-cnc-horizontal-lathes.png"]),
     price: null,
     specs: { "Swing over Bed": "800–2500 mm", "Turning Length": "up to 12,000 mm", "Spindle Bore": "220 mm", "Control": "Siemens 828D", "Bed Width": "varies by model" },
     tags: ["New", "CNC", "Lathe", "RETOS"],
@@ -71,6 +78,7 @@ export const PRODUCTS = [
     price: null,
     specs: { "Swing Diameter": "330–815 mm", "Between Centres": "750–4000 mm", "Spindle Speeds": "5–2000 rpm", "Origin": "Slovakia / TRENS" },
     tags: ["New", "Manual Lathe", "TRENS"],
+    images: getProductImages(["manual-horizontal-lathes.png"]),
     featured: false,
   },
   {
@@ -80,6 +88,7 @@ export const PRODUCTS = [
     price: null,
     specs: { "Chuck Diameter": "1100–5000 mm", "Turning Height": "up to 3200 mm", "Part Weight": "up to 35,000 kg", "Control": "Siemens 828D" },
     tags: ["New", "Vertical Lathe", "TOS Olomouc"],
+    images: getProductImages(["vertical-lathes-vlc.png"]),
     featured: false,
   },
   {
@@ -98,6 +107,7 @@ export const PRODUCTS = [
     price: null,
     specs: { "Table Size": "320×1250 mm", "Spindle Taper": "ISO/BT 40", "Spindle Speed": "60–4000 rpm", "Control": "FAGOR / Siemens" },
     tags: ["New", "CNC Milling"],
+    images: getProductImages(["fv-30-cnc-a.png"]),
     featured: false,
   },
   {
@@ -107,6 +117,7 @@ export const PRODUCTS = [
     price: 89,
     specs: { "Type": "Semi-Synthetic", "Dilution": "3–8 %", "pH (concentrate)": "9.2", "Volume": "20 L", "Biodegradable": "Yes" },
     tags: ["Coolant", "Accessories"],
+    images: getProductImages(["coolcut-bio-90.png"]),
     featured: false,
   },
   {
@@ -125,6 +136,7 @@ export const PRODUCTS = [
     price: 38500,
     specs: { "Capacity Round": "520 mm", "Capacity Square": "520×520 mm", "Blade Speed": "18–90 m/min", "Motor": "4 kW", "Weight": "2800 kg" },
     tags: ["Semi-Automatic", "Double Column", "Band Saw", "PILOUS"],
+    images: getProductImages(["arg-520-dc-s-a-f.png"]),
     featured: false,
   },
   {
@@ -134,12 +146,14 @@ export const PRODUCTS = [
     price: 3200,
     specs: { "Max Part Width": "90 mm", "Max Part Height": "35 mm", "Brush Speed": "1400 rpm", "Motor": "0.75 kW", "Weight": "68 kg" },
     tags: ["New", "Deburring", "PILOUS"],
+    images: getProductImages(["oh-90.png"]),
     featured: false,
   },
   {
     id: 15, sku: "WH-63", category: "boring-mills", condition: "used",
     name: "WH-63 Conventional HBM (Used)",
     short: "TOS Olomouc 63mm conventional horizontal boring mill. Overhauled, in working condition.",
+    images: getProductImages(["manual-boring-mills.jpg"]),
     price: 28000,
     specs: { "Spindle Diameter": "63 mm", "Table Size": "900×1000 mm", "Condition": "Overhauled", "Year": "Est. 1985–1995" },
     tags: ["Used", "HBM", "TOS Olomouc"],

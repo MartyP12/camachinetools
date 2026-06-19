@@ -17,7 +17,7 @@ function ContactPage() {
             {[
               { label: "Head Office", value: "14-900 Village Lane, Suite 1014\nOkotoks, Alberta, Canada T1S 1Z6" },
               { label: "Phone", value: <><a href="tel:+14036493240">+1 (403) 649-3240</a> (office)<br /><a href="tel:+19058780888">+1 (905) 878-0888</a> (cell)</> },
-              { label: "Hours", value: "Mon–Fri &nbsp; 08:00 – 17:00 MT\nUrgent service line available after hours" },
+              { label: "Hours", value: "Mon–Fri 08:00 – 17:00 MT\nUrgent service line available after hours" },
               { label: "Sales & Inquiries", value: <><a href="mailto:info@canameramachinetools.com">info@canameramachinetools.com</a></> },
               { label: "Parts Ordering", value: "Same phone / email. Reference SKU and machine serial if available." },
             ].map(c => (

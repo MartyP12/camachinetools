@@ -4,11 +4,13 @@
 
   :root {
     --bg:       #e1e1e1;
+    --logo_red: rgb(167, 30, 70);
+    --logo_blue: rgb(48, 49, 99);
     --surface:  #e7eaf3;
     --card:     #191d24;
     --border:   #252b35;
-    --accent:   #e87c0d;
-    --accent2:  #f5b942;
+    --accent:   rgb(167, 30, 70);
+    --accent2:  rgb(48, 49, 99);
     --text:     #e9e9e9;
     --title:    #000000;
     --muted:    #7a8494;

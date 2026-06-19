@@ -68,9 +68,11 @@ function App() {
             ))}
           </div>
           <div className="nav-actions">
+            {/* Cart Button 
             <button className="cart-btn" onClick={() => setCartOpen(true)}>
               ◈ Cart {cart.length > 0 && <span className="cart-badge">{cart.length}</span>}
             </button>
+            */}
             <button className="nav-quote-btn" onClick={() => navigate("Contact")}>Quote</button>
           </div>
         </div>

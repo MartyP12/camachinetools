@@ -3,10 +3,15 @@ import { formatPrice, getCategoryIcon } from "../Utilities";
 function ProductCard({ product, onAddToCart, onViewDetail, cartIds }) {
   const added = cartIds.has(product.id);
   const icon = getCategoryIcon(product.category);
+  const image = product.image || product.images?.[0];
+
   return (
     <div className="product-card">
-      <div className="product-img">
-        <div className="product-img-inner" style={{ fontSize: 72 }}>{icon}</div>
+      <div className={`product-img ${image ? "has-image" : ""}`}>
+        {image
+          ? <img className="product-photo" src={image} alt={product.name} loading="lazy" />
+          : <div className="product-img-inner" style={{ fontSize: 72 }}>{icon}</div>
+        }
         <div className={`product-condition-badge ${product.condition === "new" ? "badge-new" : "badge-used"}`}>
           {product.condition}
         </div>
