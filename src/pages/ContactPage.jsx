@@ -44,7 +44,7 @@ function ContactPage() {
               </div>
             ))}
           </div>
-          <form className="contact-form" name="contact" netlify method="POST" data-netlify="true" netlify="true" onSubmit={handleSubmit}>
+          <form className="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
             {sent
               ? <div style={{ textAlign: "center", padding: "60px 0" }}>
                   <div style={{ fontSize: 48, marginBottom: 16, color: "var(--success)" }}>✓</div>
