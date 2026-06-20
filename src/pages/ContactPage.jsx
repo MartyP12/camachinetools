@@ -4,6 +4,23 @@ import { useState } from "react";
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    });
+
+    form.reset();
+    setSent(true);
+  };
+
   return (
     <div className="page">
       <div className="container">
@@ -27,27 +44,28 @@ function ContactPage() {
               </div>
             ))}
           </div>
-          <div className="contact-form">
+          <form className="contact-form" name="contact" netlify method="POST" data-netlify="true" netlify="true" onSubmit={handleSubmit}>
             {sent
               ? <div style={{ textAlign: "center", padding: "60px 0" }}>
                   <div style={{ fontSize: 48, marginBottom: 16, color: "var(--success)" }}>✓</div>
                   <div style={{ fontFamily: "var(--font-head)", fontSize: 28, fontWeight: 800, textTransform: "uppercase", marginBottom: 10 }}>Message Sent</div>
                   <p style={{ fontSize: 14, color: "var(--muted)" }}>We'll get back to you within 1 business day.</p>
-                  <button className="btn-secondary" style={{ marginTop: 20 }} onClick={() => setSent(false)}>Send Another</button>
+                  <button type="button" className="btn-secondary" style={{ marginTop: 20 }} onClick={() => setSent(false)}>Send Another</button>
                 </div>
               : <>
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className="form-title">Send a Message</div>
                   <div className="form-row">
-                    <div className="form-group"><label className="form-label">Your Name</label><input className="form-input" placeholder="John Smith" /></div>
-                    <div className="form-group"><label className="form-label">Company</label><input className="form-input" placeholder="Acme Manufacturing" /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="contact-name">Your Name</label><input id="contact-name" name="name" className="form-input" placeholder="John Smith" /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="contact-company">Company</label><input id="contact-company" name="company" className="form-input" placeholder="Acme Manufacturing" /></div>
                   </div>
                   <div className="form-row">
-                    <div className="form-group"><label className="form-label">Phone</label><input className="form-input" placeholder="+1 (___) ___-____" /></div>
-                    <div className="form-group"><label className="form-label">Email</label><input className="form-input" type="email" placeholder="you@company.com" /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="contact-phone">Phone</label><input id="contact-phone" name="phone" className="form-input" placeholder="+1 (___) ___-____" /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="contact-email">Email</label><input id="contact-email" name="email" className="form-input" type="email" placeholder="you@company.com" /></div>
                   </div>
                   <div className="form-group">
-                    <label className="form-label">Subject / Product</label>
-                    <select className="form-select">
+                    <label className="form-label" htmlFor="contact-subject">Subject / Product</label>
+                    <select id="contact-subject" name="subject" className="form-select">
                       <option value="">Select a subject…</option>
                       <option>New Equipment Inquiry</option>
                       <option>Used Equipment Inquiry</option>
@@ -57,13 +75,13 @@ function ContactPage() {
                     </select>
                   </div>
                   <div className="form-group">
-                    <label className="form-label">Message / Order Details</label>
-                    <textarea className="form-textarea" placeholder="Include SKU, quantity, specifications, timeline, or any other relevant details…" />
+                    <label className="form-label" htmlFor="contact-message">Message / Order Details</label>
+                    <textarea id="contact-message" name="message" className="form-textarea" placeholder="Include SKU, quantity, specifications, timeline, or any other relevant details…" />
                   </div>
-                  <button className="form-submit" onClick={() => setSent(true)}>Send Message</button>
+                  <button type="submit" className="form-submit">Send Message</button>
                 </>
             }
-          </div>
+          </form>
         </div>
       </div>
     </div>
