@@ -32,6 +32,7 @@ export const PRODUCTS = [
     images: getProductImages(["arg-260.png"]),
     featured: true,
   },
+  /*
   {
     id: 3, sku: "ARG-300-CF-NC", category: "band-saws", condition: "new",
     name: "ARG-300 CF NC Automat CNC Band Saw",
@@ -41,6 +42,7 @@ export const PRODUCTS = [
     tags: ["CNC", "Automatic", "Band Saw", "PILOUS"],
     featured: true,
   },
+  */
   {
     id: 4, sku: "RET-10P", category: "boring-mills", condition: "new",
     name: "RET-10P Floor Type HBM",
@@ -91,6 +93,7 @@ export const PRODUCTS = [
     images: getProductImages(["vertical-lathes-vlc.png"]),
     featured: false,
   },
+  /*
   {
     id: 9, sku: "FGU-32", category: "milling", condition: "new",
     name: "FGU-32 Knee Type Milling Machine",
@@ -100,6 +103,7 @@ export const PRODUCTS = [
     tags: ["New", "Milling", "Knee Type"],
     featured: false,
   },
+  */
   {
     id: 10, sku: "FV-30-CNC-A", category: "milling", condition: "new",
     name: "FV-30 CNC-A Vertical Milling Centre",
@@ -120,6 +124,7 @@ export const PRODUCTS = [
     images: getProductImages(["coolcut-bio-90.png"]),
     featured: false,
   },
+  /*
   {
     id: 12, sku: "BI-METAL-M42", category: "saw-accessories", condition: "new",
     name: "Bi-Metal M-42 Saw Band",
@@ -129,6 +134,7 @@ export const PRODUCTS = [
     tags: ["Saw Band", "Consumables", "Accessories"],
     featured: false,
   },
+  */
   {
     id: 13, sku: "ARG-520-DC-SAF", category: "band-saws", condition: "new",
     name: "ARG-520 DC SAF Double-Column Semi-Auto",

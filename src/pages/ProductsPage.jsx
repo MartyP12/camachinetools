@@ -45,7 +45,7 @@ function ProductsPage({ onAddToCart, onViewDetail, cartIds }) {
         </div>
 
         {filtered.length === 0
-          ? <div style={{ textAlign: "center", padding: "80px 0", color: "var(--dim)", fontFamily: "var(--font-mono)", fontSize: 12, textTransform: "uppercase", letterSpacing: "0.1em" }}>No products match your filters</div>
+          ? <div style={{ textAlign: "center", padding: "80px 0", color: "var(--title)", fontFamily: "var(--font-mono)", fontSize: 12, textTransform: "uppercase", letterSpacing: "0.1em" }}>No products match your filters</div>
           : <div className="product-grid">
               {filtered.map(p => (
                 <ProductCard key={p.id} product={p} onAddToCart={onAddToCart} onViewDetail={onViewDetail} cartIds={cartIds} />

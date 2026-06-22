@@ -46,8 +46,8 @@
     .nav-quote-btn:hover { background: var(--accent); transform: translateY(-1px); }
 
     .CM-logo img {
-    margin-top: 10px;
-    width: 100px; height: 100px;
+        margin-top: 5px;
+        width: 100px; height: 100px;
     }
 
     .cart-btn {

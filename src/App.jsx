@@ -10,7 +10,7 @@ import ServicesPage from "./pages/ServicesPage";
 import { NAV_LINKS } from "./data/catalog";
 
 // Assets
-import logo from "./assets/logo2.png";
+import logo from "./assets/blackoutline.png";
 
 const SOCIAL_LINKS = [
   {
