@@ -24,8 +24,8 @@ function CompanyPage() {
               <div style={{ fontFamily: "var(--font-head)", fontSize: 16, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--muted)", marginBottom: 16 }}>Company Details</div>
               {[
                 { icon: "◆", label: "Legal Name", value: "CanAmera Machine Tools Inc." },
-                { icon: "📍", label: "Address", value: "14-900 Village Lane, Suite 1014\nOkotoks, Alberta, Canada T1S 1Z6" },
-                { icon: "☎", label: "Phone", value: "Tel: +1 (403) 649-3240\nCell: +1 (905) 878-0888" },
+                { icon: "📍", label: "Address", value: "1440 52 St NE #313\nCalgary, AB T2A 4T8" },
+                { icon: "☎", label: "Phone", value: "Tel: +1 (403) 649-3240" },
                 { icon: "🌍", label: "Service Area", value: "Canada (primary: Western Canada & Ontario)" },
                 { icon: "⚙", label: "Specialization", value: "HBMs, Lathes, Milling Machines, Band Saws" },
                 { icon: "◉", label: "Origin", value: "Czech Republic & Slovakia" },

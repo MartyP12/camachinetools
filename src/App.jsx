@@ -1,5 +1,4 @@
 import { useState } from "react";
-import CartDrawer from "./components/CartDrawer";
 import ProductModal from "./components/ProductModal";
 import CompanyPage from "./pages/CompanyPage";
 import ContactPage from "./pages/ContactPage";
@@ -30,7 +29,6 @@ const SOCIAL_LINKS = [
   {
     label: "X",
     href: "https://x.com/canameramt/",
-    viewBox: "0 0 16 16",
     color: "#000000",
     viewBox: "0 0 16 16",
     path: "M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z",
@@ -39,17 +37,14 @@ const SOCIAL_LINKS = [
 
 function App() {
   const [page, setPage] = useState("Home");
-  const [cartOpen, setCartOpen] = useState(false);
-  const [cart, setCart] = useState([]);
   const [modalProduct, setModalProduct] = useState(null);
-  const cartIds = new Set(cart.map(i => i.id));
 
   const navigate = (p) => { setPage(p); window.scrollTo({ top: 0, behavior: "smooth" }); };
 
-  const addToCart = (product) => {
-    if (!cartIds.has(product.id)) setCart(c => [...c, product]);
+  const requestQuote = () => {
+    setModalProduct(null);
+    navigate("Contact");
   };
-  const removeFromCart = (id) => setCart(c => c.filter(i => i.id !== id));
 
   return (
     <>
@@ -68,11 +63,6 @@ function App() {
             ))}
           </div>
           <div className="nav-actions">
-            {/* Cart Button 
-            <button className="cart-btn" onClick={() => setCartOpen(true)}>
-              ◈ Cart {cart.length > 0 && <span className="cart-badge">{cart.length}</span>}
-            </button>
-            */}
             <button className="nav-quote-btn" onClick={() => navigate("Contact")}>Quote</button>
           </div>
         </div>
@@ -80,8 +70,8 @@ function App() {
 
       {/* Pages */}
       <div style={{ paddingTop: 36 }}>
-        {page === "Home"     && <HomePage onNavigate={navigate} onAddToCart={addToCart} onViewDetail={setModalProduct} cartIds={cartIds} />}
-        {page === "Products" && <ProductsPage onAddToCart={addToCart} onViewDetail={setModalProduct} cartIds={cartIds} />}
+        {page === "Home"     && <HomePage onNavigate={navigate} onViewDetail={setModalProduct} onRequestQuote={requestQuote} />}
+        {page === "Products" && <ProductsPage onViewDetail={setModalProduct} onRequestQuote={requestQuote} />}
         {page === "Parts"    && <PartsPage onNavigate={navigate} />}
         {page === "Services" && <ServicesPage />}
         {page === "Company"  && <CompanyPage />}
@@ -138,16 +128,12 @@ function App() {
         </div>
       </footer>
 
-      {/* Cart Drawer */}
-      <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} items={cart} onRemove={removeFromCart} />
-
       {/* Product Detail Modal */}
       {modalProduct && (
         <ProductModal
           product={modalProduct}
           onClose={() => setModalProduct(null)}
-          onAddToCart={addToCart}
-          cartIds={cartIds}
+          onRequestQuote={requestQuote}
         />
       )}
     </>

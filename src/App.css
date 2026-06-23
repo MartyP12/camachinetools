@@ -188,7 +188,7 @@
   .btn-cart:hover { background: var(--accent2); }
   .btn-cart.added { background: var(--success); color: #000; }
   .btn-detail {
-    background: var(--surface); border: 1px solid var(--border);
+    flex: 1; background: var(--surface); border: 1px solid var(--border);
     color: var(--muted); border-radius: var(--r);
     font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
     padding: 9px 12px;

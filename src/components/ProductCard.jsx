@@ -1,7 +1,6 @@
 import { formatPrice, getCategoryIcon } from "../Utilities";
 
-function ProductCard({ product, onAddToCart, onViewDetail, cartIds }) {
-  const added = cartIds.has(product.id);
+function ProductCard({ product, onViewDetail, onRequestQuote }) {
   const icon = getCategoryIcon(product.category);
   const image = product.image || product.images?.[0];
 
@@ -29,20 +28,13 @@ function ProductCard({ product, onAddToCart, onViewDetail, cartIds }) {
         }
       </div>
       <div className="product-actions">
-        {/* 
-        {product.price
-          ? <button className={`btn-cart ${added ? "added" : ""}`} onClick={() => onAddToCart(product)}>
-              {added ? "✓ In Cart" : "Add to Cart"}
-            </button>
-          : <button className="btn-cart" onClick={() => onAddToCart(product)} style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--accent)" }}>
-              Request Quote
-            </button>
-        }
-        */}
-         <button className="btn-cart" onClick={() => onAddToCart(product)} style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--accent)" }}>
-              Request Quote
-          </button>
-        
+        <button
+          className="btn-cart"
+          style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--accent)" }}
+          onClick={() => onRequestQuote(product)}
+        >
+          Request Quote
+        </button>
         <button className="btn-detail" onClick={() => onViewDetail(product)}>Info</button>
       </div>
     </div>

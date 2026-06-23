@@ -2,7 +2,7 @@ import ProductCard from "../components/ProductCard";
 import { CATEGORIES, PRODUCTS } from "../data/catalog";
 import { manufacturerLogos } from "../data/manufacturers";
 
-function HomePage({ onNavigate, onAddToCart, onViewDetail, cartIds }) {
+function HomePage({ onNavigate, onViewDetail, onRequestQuote }) {
   const featured = PRODUCTS.filter(p => p.featured);
 
   return (
@@ -71,7 +71,7 @@ function HomePage({ onNavigate, onAddToCart, onViewDetail, cartIds }) {
           </div>
           <div className="product-grid">
             {featured.map(p => (
-              <ProductCard key={p.id} product={p} onAddToCart={onAddToCart} onViewDetail={onViewDetail} cartIds={cartIds} />
+              <ProductCard key={p.id} product={p} onViewDetail={onViewDetail} onRequestQuote={onRequestQuote} />
             ))}
           </div>
         </div>

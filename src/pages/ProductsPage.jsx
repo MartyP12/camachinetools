@@ -2,7 +2,7 @@ import { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { CATEGORIES, PRODUCTS } from "../data/catalog";
 
-function ProductsPage({ onAddToCart, onViewDetail, cartIds }) {
+function ProductsPage({ onViewDetail, onRequestQuote }) {
   const [activeCat, setActiveCat] = useState("all");
   const [condition, setCondition] = useState("all");
   const [search, setSearch] = useState("");
@@ -48,7 +48,7 @@ function ProductsPage({ onAddToCart, onViewDetail, cartIds }) {
           ? <div style={{ textAlign: "center", padding: "80px 0", color: "var(--title)", fontFamily: "var(--font-mono)", fontSize: 12, textTransform: "uppercase", letterSpacing: "0.1em" }}>No products match your filters</div>
           : <div className="product-grid">
               {filtered.map(p => (
-                <ProductCard key={p.id} product={p} onAddToCart={onAddToCart} onViewDetail={onViewDetail} cartIds={cartIds} />
+                <ProductCard key={p.id} product={p} onViewDetail={onViewDetail} onRequestQuote={onRequestQuote} />
               ))}
             </div>
         }

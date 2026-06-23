@@ -1,6 +1,5 @@
-function ProductModal({ product, onClose, onAddToCart, cartIds }) {
+function ProductModal({ product, onClose, onRequestQuote }) {
   if (!product) return null;
-  const added = cartIds.has(product.id);
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={e => e.stopPropagation()}>
@@ -25,8 +24,8 @@ function ProductModal({ product, onClose, onAddToCart, cartIds }) {
             {product.tags.map(t => <span key={t} className="tag">{t}</span>)}
           </div>
           <div className="modal-actions">
-            <button className={`btn-cart ${added ? "added" : ""}`} style={{ flex: 1, padding: "12px" }} onClick={() => onAddToCart(product)}>
-              {added ? "✓ Added to Cart" : product.price ? "Add to Cart" : "Request Quote"}
+            <button className="btn-cart" style={{ flex: 1, padding: "12px" }} onClick={() => onRequestQuote(product)}>
+              Request Quote
             </button>
           </div>
         </div>
