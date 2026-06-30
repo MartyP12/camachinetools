@@ -9,7 +9,7 @@ import ServicesPage from "./pages/ServicesPage";
 import { NAV_LINKS } from "./data/catalog";
 
 // Assets
-import logo from "./assets/blackoutline.png";
+import logo from "./assets/newlogo.svg";
 
 const PAGE_ROUTES = {
   Home: "",
@@ -122,11 +122,21 @@ function App() {
             </div>
             CA Machine Tools
           </button>
+
+          <input type="checkbox" id="menu-toggle" className="menu-toggle"></input>
+
+          <label htmlFor="menu-toggle" className="hamburger" onClick={() => { navigate(l); document.getElementById("menu-toggle").checked = false;}}>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </label>
+
           <div className="nav-links">
             {NAV_LINKS.map(l => (
               <button key={l} className={`nav-link ${page === l ? "active" : ""}`} onClick={() => navigate(l)}>{l}</button>
             ))}
           </div>
+
           <div className="nav-actions">
             <button className="nav-quote-btn" onClick={() => navigate("Contact")}>Quote</button>
           </div>

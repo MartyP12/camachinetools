@@ -56,12 +56,12 @@ function ContactPage() {
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="form-title">Send a Message</div>
                   <div className="form-row">
-                    <div className="form-group"><label className="form-label" htmlFor="contact-name">Your Name</label><input id="contact-name" name="name" className="form-input" placeholder="John Smith" /></div>
-                    <div className="form-group"><label className="form-label" htmlFor="contact-company">Company</label><input id="contact-company" name="company" className="form-input" placeholder="Acme Manufacturing" /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="contact-name">Your Name*</label><input id="contact-name" name="name" className="form-input" placeholder="John Smith" required/></div>
+                    <div className="form-group"><label className="form-label" htmlFor="contact-company">Company*</label><input id="contact-company" name="company" className="form-input" placeholder="Acme Manufacturing" required /></div>
                   </div>
                   <div className="form-row">
                     <div className="form-group"><label className="form-label" htmlFor="contact-phone">Phone</label><input id="contact-phone" name="phone" className="form-input" placeholder="+1 (___) ___-____" /></div>
-                    <div className="form-group"><label className="form-label" htmlFor="contact-email">Email</label><input id="contact-email" name="email" className="form-input" type="email" placeholder="you@company.com" /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="contact-email">Email*</label><input id="contact-email" name="email" className="form-input" type="email" placeholder="you@company.com" required /></div>
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="contact-subject">Subject / Product</label>
@@ -75,9 +75,11 @@ function ContactPage() {
                     </select>
                   </div>
                   <div className="form-group">
-                    <label className="form-label" htmlFor="contact-message">Message / Order Details</label>
-                    <textarea id="contact-message" name="message" className="form-textarea" placeholder="Include SKU, quantity, specifications, timeline, or any other relevant details…" />
+                    <label className="form-label" htmlFor="contact-message">Message / Order Details*</label>
+                    <textarea id="contact-message" name="message" className="form-textarea" placeholder="Include SKU, quantity, specifications, timeline, or any other relevant details…" required />
                   </div>
+
+                  <div data-netlify-recaptcha="true"></div>
                   <button type="submit" className="form-submit">Send Message</button>
                 </>
             }

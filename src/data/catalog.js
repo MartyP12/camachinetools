@@ -156,7 +156,7 @@ export const PRODUCTS = [
     featured: false,
   },
   {
-    id: 15, sku: "WH-63", category: "boring-mills", condition: "used",
+    id: 15, sku: "WH-63", category: "boring-mills", condition: "new",
     name: "WH-63 Conventional HBM (Used)",
     short: "TOS Olomouc 63mm conventional horizontal boring mill. Overhauled, in working condition.",
     images: getProductImages(["manual-boring-mills.jpg"]),

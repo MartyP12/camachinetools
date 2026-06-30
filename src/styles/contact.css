@@ -32,3 +32,16 @@
   .contact-card-value { font-size: 14px; color: var(--text); line-height: 1.65; }
   .contact-card-value a { color: var(--accent); text-decoration: none; }
   .contact-card-value a:hover { text-decoration: underline; }
+
+
+@media (max-width: 768px) {
+    .contact-grid { gap: 20px; }
+    .contact-form { padding: 24px; }
+    .form-title { font-size: 20px; margin-bottom: 18px; }
+    .form-row { grid-template-columns: 1fr; gap: 12px; }
+    .form-group { margin-bottom: 12px; }
+    .form-submit { font-size: 16px; padding: 11px 24px; }
+    .contact-card { padding: 18px 20px; }
+    .contact-card-label { font-size: 9px; margin-bottom: 8px; }
+    .contact-card-value { font-size: 13px; line-height: 1.55; }
+}
