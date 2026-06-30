@@ -120,7 +120,7 @@ function App() {
             <div className="CM-logo">
               <img src={logo} alt="Logo"/>
             </div>
-            CanAmera Machine Tools
+            CA Machine Tools
           </button>
           <div className="nav-links">
             {NAV_LINKS.map(l => (
@@ -148,7 +148,7 @@ function App() {
         <div className="container">
           <div className="footer-grid">
             <div>
-              <div className="footer-brand">CanAmera Machine Tools</div>
+              <div className="footer-brand">CA Machine Tools</div>
               <p className="footer-tagline">Precision machine tools from Czech Republic & Slovakia, backed by local service & parts in Canada.</p>
               
               {/* Social Links */}
@@ -177,7 +177,7 @@ function App() {
             {[
               { title: "Products", links: ["New Equipment", "Used Equipment", "Band Saws", "Boring Mills", "Lathes", "Milling Machines"] },
               { title: "Company", links: ["Company Profile", "Services", "Spare Parts", "Contact"] },
-              { title: "Contact", links: ["+1 (403) 649-3240", "Calgary, AB, Canada", "T2A 4T8"] },
+              { title: "Contact", links: ["+1 (403) 649-3240", "Okotoks, AB, Canada", "T1S 1Z6"] },
             ].map(col => (
               <div key={col.title}>
                 <div className="footer-col-title">{col.title}</div>
@@ -188,7 +188,7 @@ function App() {
             ))}
           </div>
           <div className="footer-bottom">
-            <div className="footer-copy">© 2026 CanAmera Machine Tools Inc. All rights reserved.</div>
+            <div className="footer-copy">© 2026 CA Machine Tools Inc. All rights reserved.</div>
           </div>
         </div>
       </footer>

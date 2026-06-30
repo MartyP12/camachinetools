@@ -32,7 +32,7 @@ function ContactPage() {
         <div className="contact-grid">
           <div className="contact-info-box">
             {[
-              { label: "Head Office", value: "1440 52 St NE #313\nCalgary, AB T2A 4T8" },
+              { label: "Head Office", value: "14-900 Village Lane Unit 1014\nOkotoks, AB T1S 1Z6" },
               { label: "Phone", value: <><a href="tel:+14036493240">+1 (403) 649-3240</a> (office)<br /> </> },
               { label: "Hours", value: "Mon–Fri 08:00 – 17:00 MT\nUrgent service line available after hours" },
               { label: "Sales & Inquiries", value: <><a href="mailto:info@canameramachinetools.com">info@canameramachinetools.com</a></> },

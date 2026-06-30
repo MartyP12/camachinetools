@@ -12,7 +12,7 @@ function HomePage({ onNavigate, onViewDetail, onRequestQuote }) {
         <div className="hero-grid-bg" />
         <div className="hero-glow" />
         <div className="container hero-content">
-          <div className="hero-eyebrow">Calgary, Alberta</div>
+          <div className="hero-eyebrow">Okotoks, Alberta</div>
           <h1 className="hero-title">
             Precision<br />Machine<br /><em>Tools.</em>
           </h1>

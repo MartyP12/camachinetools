@@ -12,19 +12,19 @@ function CompanyPage() {
           <div className="about-text">
             <h2>Fine Machinery for Your Shop</h2>
             <p>
-              CanAmera Machine Tools is an authorised importer of new <strong>RETOS VARNSDORF</strong> horizontal boring mills, new <strong>TRENS (TOS Trencin) Lathes</strong>, 
+              CA Machine Tools is an authorised importer of new <strong>RETOS VARNSDORF</strong> horizontal boring mills, new <strong>TRENS (TOS Trencin) Lathes</strong>, 
               new heavy duty lathes, <strong>TDZ TURN</strong> vertical lathes, used <strong>TOS</strong> boring mills, and other equipment from Czech Republic and Slovakia.
               We offer high quality heavy duty machinery as well as long term partnership to support your immediate and after sale needs.
               We provide spare parts for TOS Varnsdorf boring mills as well as parts for most of "TOS" brand machine tools. We stock most parts at our location and usually ship them the same day.
-              When you have any question or need for our assistance, contact us today! CanAmera Machine Tools Inc. is a new name for long term presence of TOS machine tools on the North American market.
+              When you have any question or need for our assistance, contact us today! CA Machine Tools Inc. is a new name for long term presence of TOS machine tools on the North American market.
             </p>
           </div>
           <div>
             <div className="about-info">
               <div style={{ fontFamily: "var(--font-head)", fontSize: 16, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--muted)", marginBottom: 16 }}>Company Details</div>
               {[
-                { icon: "◆", label: "Legal Name", value: "CanAmera Machine Tools Inc." },
-                { icon: "📍", label: "Address", value: "1440 52 St NE #313\nCalgary, AB T2A 4T8" },
+                { icon: "◆", label: "Legal Name", value: "CA Machine Tools Inc." },
+                { icon: "📍", label: "Address", value: "14-900 Village Lane Unit 1014\nOkotoks, AB T1S 1Z6" },
                 { icon: "☎", label: "Phone", value: "Tel: +1 (403) 649-3240" },
                 { icon: "🌍", label: "Service Area", value: "Canada (primary: Western Canada & Ontario)" },
                 { icon: "⚙", label: "Specialization", value: "HBMs, Lathes, Milling Machines, Band Saws" },
