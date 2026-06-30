@@ -6,7 +6,7 @@
     position: relative; overflow: hidden;
     min-height: 580px;
     display: flex; align-items: center;
-    background: linear-gradient(135deg, #9a9c9d 0%, #aaabac 60%, #1a1f2e 100%);
+    background: linear-gradient(135deg, #c2c2c2 0%, #d6d6d6 60%, #bbbbbb 100%);
     border-bottom: 1px solid var(--border);
   }
   .hero-grid-bg {

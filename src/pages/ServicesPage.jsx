@@ -17,7 +17,7 @@ function ServicesPage() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
           {services.map(s => (
-            <div key={s.title} style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: "var(--r)", padding: 24 }}>
+            <div key={s.title} style={{ background: "var(--card)", border: "0px solid var(--border)", borderRadius: "var(--r)", padding: 24 }}>
               <div style={{ fontSize: 28, marginBottom: 12, color: "var(--accent)" }}>{s.icon}</div>
               <div style={{ fontFamily: "var(--font-head)", fontSize: 20, fontWeight: 700, textTransform: "uppercase", marginBottom: 10 }}>{s.title}</div>
               <p style={{ fontSize: 13, color: "var(--muted)", lineHeight: 1.65 }}>{s.desc}</p>

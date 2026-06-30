@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductModal from "./components/ProductModal";
 import CompanyPage from "./pages/CompanyPage";
 import ContactPage from "./pages/ContactPage";
@@ -10,6 +10,43 @@ import { NAV_LINKS } from "./data/catalog";
 
 // Assets
 import logo from "./assets/blackoutline.png";
+
+const PAGE_ROUTES = {
+  Home: "",
+  Products: "products",
+  Parts: "parts",
+  Services: "services",
+  Company: "company",
+  Contact: "contact",
+};
+
+const ROUTE_PAGES = Object.fromEntries(
+  Object.entries(PAGE_ROUTES).map(([page, route]) => [route, page])
+);
+
+const normalizeRoute = (hash) => hash.replace(/^#\/?/, "").replace(/\/$/, "").toLowerCase();
+
+const getPageFromUrl = () => ROUTE_PAGES[normalizeRoute(window.location.hash)] || "Home";
+
+const getUrlForPage = (page) => {
+  const url = new URL(window.location.href);
+  url.hash = PAGE_ROUTES[page] ? `/${PAGE_ROUTES[page]}` : "";
+  return `${url.pathname}${url.search}${url.hash}`;
+};
+
+const getFooterPage = (columnTitle, linkLabel) => {
+  if (columnTitle === "Products") return "Products";
+  if (columnTitle === "Contact") return "Contact";
+
+  const companyLinks = {
+    "Company Profile": "Company",
+    Services: "Services",
+    "Spare Parts": "Parts",
+    Contact: "Contact",
+  };
+
+  return companyLinks[linkLabel] || "Company";
+};
 
 const SOCIAL_LINKS = [
   {
@@ -36,10 +73,38 @@ const SOCIAL_LINKS = [
 ];
 
 function App() {
-  const [page, setPage] = useState("Home");
+  const [page, setPage] = useState(getPageFromUrl);
   const [modalProduct, setModalProduct] = useState(null);
 
-  const navigate = (p) => { setPage(p); window.scrollTo({ top: 0, behavior: "smooth" }); };
+  useEffect(() => {
+    const syncPageWithUrl = () => {
+      setPage(getPageFromUrl());
+      setModalProduct(null);
+      window.scrollTo({ top: 0 });
+    };
+
+    window.addEventListener("popstate", syncPageWithUrl);
+    window.addEventListener("hashchange", syncPageWithUrl);
+
+    return () => {
+      window.removeEventListener("popstate", syncPageWithUrl);
+      window.removeEventListener("hashchange", syncPageWithUrl);
+    };
+  }, []);
+
+  const navigate = (nextPage) => {
+    if (!(nextPage in PAGE_ROUTES)) return;
+
+    setPage(nextPage);
+    setModalProduct(null);
+
+    const nextUrl = getUrlForPage(nextPage);
+    if (window.location.href !== new URL(nextUrl, window.location.href).href) {
+      window.history.pushState({ page: nextPage }, "", nextUrl);
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const requestQuote = () => {
     setModalProduct(null);
@@ -117,7 +182,7 @@ function App() {
               <div key={col.title}>
                 <div className="footer-col-title">{col.title}</div>
                 <ul className="footer-links">
-                  {col.links.map(l => <li key={l} onClick={() => navigate(col.title === "Products" ? "Products" : col.title === "Company" ? l : "Contact")}>{l}</li>)}
+                  {col.links.map(l => <li key={l} onClick={() => navigate(getFooterPage(col.title, l))}>{l}</li>)}
                 </ul>
               </div>
             ))}

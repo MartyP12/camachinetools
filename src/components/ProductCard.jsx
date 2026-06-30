@@ -22,10 +22,7 @@ function ProductCard({ product, onViewDetail, onRequestQuote }) {
         <div className="product-tags">
           {product.tags.slice(0, 3).map(t => <span key={t} className="tag">{t}</span>)}
         </div>
-        {product.price
-          ? <div className="product-price">{formatPrice(product.price)}<span style={{ fontSize: 13, color: "var(--muted)", fontWeight: 400, marginLeft: 4 }}>CAD</span></div>
-          : <div className="product-price-rfi">RFI — Request for info</div>
-        }
+        <div className="product-price-rfi">RFI — Request for info</div>
       </div>
       <div className="product-actions">
         <button
