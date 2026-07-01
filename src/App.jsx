@@ -75,11 +75,13 @@ const SOCIAL_LINKS = [
 function App() {
   const [page, setPage] = useState(getPageFromUrl);
   const [modalProduct, setModalProduct] = useState(null);
+  const [quoteProduct, setQuoteProduct] = useState(null);
 
   useEffect(() => {
     const syncPageWithUrl = () => {
       setPage(getPageFromUrl());
       setModalProduct(null);
+      setQuoteProduct(null);
       window.scrollTo({ top: 0 });
     };
 
@@ -97,6 +99,7 @@ function App() {
 
     setPage(nextPage);
     setModalProduct(null);
+    setQuoteProduct(null);
 
     const nextUrl = getUrlForPage(nextPage);
     if (window.location.href !== new URL(nextUrl, window.location.href).href) {
@@ -106,9 +109,10 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const requestQuote = () => {
+  const requestQuote = (product) => {
     setModalProduct(null);
     navigate("Contact");
+    setQuoteProduct(product ?? null);
   };
 
   return (
@@ -120,7 +124,7 @@ function App() {
             <div className="CM-logo">
               <img src={logo} alt="Logo"/>
             </div>
-            CA Machine Tools
+            Machine Tools
           </button>
 
           <input type="checkbox" id="menu-toggle" className="menu-toggle"></input>
@@ -150,7 +154,8 @@ function App() {
         {page === "Parts"    && <PartsPage onNavigate={navigate} />}
         {page === "Services" && <ServicesPage />}
         {page === "Company"  && <CompanyPage />}
-        {page === "Contact"  && <ContactPage />}
+        {page === "Contact"  && 
+        (<ContactPage quoteProduct={quoteProduct} onClearQuote={() => setQuoteProduct(null)}/>)}
       </div>
 
       {/* Footer */}

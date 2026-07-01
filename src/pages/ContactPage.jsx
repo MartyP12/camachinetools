@@ -1,9 +1,22 @@
+import { useState, useEffect } from "react";
 
-import { useState } from "react";
-
-
-function ContactPage() {
+function ContactPage({ quoteProduct, onClearQuote }) {
   const [sent, setSent] = useState(false);
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (quoteProduct) {
+      setSubject(quoteProduct.condition === "new" ? "New Equipment Inquiry" : "Used Equipment Inquiry");
+      setMessage(
+        `Requesting a quote for:\n\n` +
+        `Product: ${quoteProduct.name}\n` +
+        `SKU: ${quoteProduct.sku}\n` +
+        `Condition: ${quoteProduct.condition === "new" ? "New" : "Used"}\n\n` +
+        `Please include pricing and availability.`
+      );
+    }
+  }, [quoteProduct]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -18,6 +31,9 @@ function ContactPage() {
     });
 
     form.reset();
+    setSubject("");
+    setMessage("");
+    onClearQuote?.();
     setSent(true);
   };
 
@@ -56,6 +72,19 @@ function ContactPage() {
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="form-title">Send a Message</div>
 
+                  {quoteProduct && (
+                    <div style={{
+                      background: "var(--surface)",
+                      border: "1px solid var(--border)",
+                      borderRadius: 8,
+                      padding: "10px 14px",
+                      marginBottom: 16,
+                      fontSize: 13,
+                    }}>
+                      Quoting: <strong>{quoteProduct.name}</strong> ({quoteProduct.sku})
+                    </div>
+                  )}
+
                 {/* Hidden input required for React JSX parsing on Netlify */}
                 <input type="hidden" name="contact" value="contact" />
 
@@ -76,7 +105,13 @@ function ContactPage() {
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="contact-subject">Subject / Product</label>
-                    <select id="contact-subject" name="subject" className="form-select">
+                    <select
+                      id="contact-subject"
+                      name="subject"
+                      className="form-select"
+                      value={subject}
+                      onChange={e => setSubject(e.target.value)}
+                    >
                       <option value="">Select a subject…</option>
                       <option>New Equipment Inquiry</option>
                       <option>Used Equipment Inquiry</option>
@@ -87,7 +122,15 @@ function ContactPage() {
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="contact-message">Message / Order Details*</label>
-                    <textarea id="contact-message" name="message" className="form-textarea" placeholder="Include SKU, quantity, specifications, timeline, or any other relevant details…" required />
+                    <textarea
+                      id="contact-message"
+                      name="message"
+                      className="form-textarea"
+                      value={message}
+                      onChange={e => setMessage(e.target.value)}
+                      placeholder="Include SKU, quantity, specifications, timeline, or any other relevant details…"
+                      required
+                    />
                   </div>
 
                   <div data-netlify-recaptcha="true"></div>
