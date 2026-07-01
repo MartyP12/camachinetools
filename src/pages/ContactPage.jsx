@@ -44,7 +44,7 @@ function ContactPage() {
               </div>
             ))}
           </div>
-          <form className="contact-form" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+          <form className="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
             {sent
               ? <div style={{ textAlign: "center", padding: "60px 0" }}>
                   <div style={{ fontSize: 48, marginBottom: 16, color: "var(--success)" }}>✓</div>
@@ -55,6 +55,17 @@ function ContactPage() {
               : <>
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="form-title">Send a Message</div>
+
+                {/* Hidden input required for React JSX parsing on Netlify */}
+                <input type="hidden" name="contact" value="contact" />
+
+                {/* The Honeypot Field */}
+                <p className="hidden-field" style={{ display: "none" }}>
+                  <label>
+                    Don’t fill this out if you're human: 
+                    <input name="bot-field" />
+                  </label>
+                </p>
                   <div className="form-row">
                     <div className="form-group"><label className="form-label" htmlFor="contact-name">Your Name*</label><input id="contact-name" name="name" className="form-input" placeholder="John Smith" required/></div>
                     <div className="form-group"><label className="form-label" htmlFor="contact-company">Company*</label><input id="contact-company" name="company" className="form-input" placeholder="Acme Manufacturing" required /></div>
